@@ -1,0 +1,50 @@
+================================================================================================================================================================================
+Defina uma função "triangRetang" que, dados três números inteiros, retorna verdadeiro se e somente se os números podem representar lados de um triângulo retângulo.
+Exemplo: triangRetang(4,5,3) deve retornar verdadeiro
+
+Escreva um pseudocódigo que leia três valores inteiros quaisquer (um em seguida do outro) e imprima uma mensagem, usando a função triangRetang, que indica se os valores lidos 
+podem ou não ser lados de um triângulo retângulo
+
+Você pode supor que os valores lidos são todos inteiros (o seu programa deve funcionar corretamente apenas nesse caso)
+================================================================================================================================================================================
+
+// Verifica se os lados formam um triângulo retângulo
+lógico: função triangRetang(lado) {
+        lógico: ehRetLocal = F;
+        se (lado[0]*lado[0] + lado[1]*lado[1] == lado[2]*lado[2]) {
+                ehRetLocal = V;
+        }
+
+        retorne ehRetLocal;
+}
+
+inteiro: lado[3], i, j, temp;
+lógico: ehRetGlobal;
+
+// Registra os lados no array "lado"
+para i de 0 até 2 {
+        faça {
+                escreva("Digite o lado ", i + 1, ": ");
+                leia(lado[i]);
+                se (lado[i] <= 0) {
+                        escreva("Erro: Todos os lados devem ser valores maiores que 0");
+                }
+        } enquanto (lado[i] <= 0)
+}
+
+// Algoritmo Bubble Sort para ordenar os lados e garantir que lado[2] seja o maior lado (hipotenusa) 
+para i de 0 até 2 {
+        para j de 0 até 2 - i {
+                se (lado[j] > lado[j+1]) {                         
+                    temp = lado[j];
+                    lado[j] = lado[j+1];
+                    lado[j+1] = temp;
+                }
+        }
+}
+
+// Chama a função para realizar a verificação e armazena a veracidade ou falsidade em ehRet
+ehRetGlobal = triangRetang(lado);
+
+// Responde se é verdadeiro ou falso que os lados fornecidos formam um triângulo retângulo
+escreva("Os lados fornecidos formam um triângulo retângulo? ", ehRetGlobal);

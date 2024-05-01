@@ -1,0 +1,42 @@
+matriz: função alterarTerreno(matriz, x, y, sinal) {
+        inteiro: p, q;
+        inteiro: operação = -1;
+
+        // Define a operação baseado no sinal
+        se (sinal == "+") {
+                operação = 1;
+        }
+
+        // Verifica se as coordenadas estão dentro dos limites da matriz
+        se (x < 0 ou x > 199 ou y < 0 ou y > 199) {
+                escreva("Erro: Coordenadas inválidas!");
+                retorne matriz;
+        }
+
+        // Altera somente a coordenada central caso seja == 0 (considere que a verificação do sinal foi feita no algoritmo prévio)
+        se (matriz[x][y] == 0) {
+                matriz[x][y] += operação;
+        }
+
+        senão {
+
+                // Alterando os valores na matriz
+                para p de x-1 até x+1 {
+                        para q de y-1 até y+1 {
+                                se (0 <= p e p < 200 e 0 <= q e q < 200) {
+                                        se (sinal == "+" e matriz[p][q] < matriz[x][y]) {
+                                                matriz[p][q] += operação;
+                                        }
+
+                                        senão se (sinal == "-" e matriz[p][q] > matriz[x][y]) {
+                                                matriz[p][q] += operação;
+                                        } 
+                                }
+                        }
+                }
+
+                matriz[x][y] += operação;
+        }
+
+        retorne matriz;
+}

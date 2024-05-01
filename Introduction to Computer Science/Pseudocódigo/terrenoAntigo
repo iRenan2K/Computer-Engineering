@@ -1,0 +1,73 @@
+inteiro: malha[200][200], x, y, valorAtual, novoValor, dx, dy, adjacenteX, adjacenteY;
+caracter: operação;
+
+void função modificarValores(malha, adjacenteX, adjacenteY, novoValor) {
+
+	// Verifica se o valor do quadrinho adjacente é diferente do novo valor
+	se (malha[adjacenteX][adjacenteY] != novoValor) {
+
+		// Atualiza o valor do quadrinho adjacente
+		malha[adjacenteX][adjacenteY] = novoValor;
+	}
+}
+
+void função alterarAdjacentes(malha, x, y, novoValor) {
+
+	// Altera os adjacentes na mesma linha (x)
+	para dx de -1 até 1 {
+		adjacenteX = x + dx;
+		se (0 <= adjacenteX e adjacenteX <= 199) {
+			modificarValores(malha, adjacenteX, adjacenteY, novoValor);
+		}
+	}
+
+	// Altera os adjacentes na mesma coluna (y)
+	para dy de -1 até 1 {
+		adjacenteY = y + dy;
+		se (0 <= adjacenteY e adjacenteY <= 199) {
+				modificarValores(malha, adjacenteX, adjacenteY, novoValor);
+		}
+	}
+
+	// Altera as diagonais sem afetar o valor central (P.S.: Lógica errada, o "para" aninhado já alteraria o valor de todos os vizinhos e a coordenada central)
+    	para dx de -1 até 1 {
+		para dy de -1 até 1 {
+			se (dx != 0 e dy != 0) {    	// Ignora a coordenada central
+				adjacenteX = x + dx;
+				adjacenteY = y + dy;
+				se (0 <= adjacenteX <= 199 e 0 <= adjacenteY <= 199) {
+					modificarValores(malha, adjacenteX, adjacenteY, novoValor);
+				}
+			}
+		}
+    	}
+}
+
+void função alterarMalha(malha, x, y, operação, valorAtual, novoValor) {
+
+	// Verifica os valores de entrada
+	se (x < 0 ou x > 199 ou y < 0 ou y > 199 {
+		escreva("Erro! Coordenadas inválidas!");
+		retorne;
+   	}
+
+	// Obtém o valor atual da coordenada
+	valorAtual = malha[x][y];
+
+	// Aplica a operação
+	se operação == “+” {
+		novoValor = valorAtual + 1;
+	}
+	senão se operação == “-” {
+		novoValor = valorAtual - 1;
+	}
+	senão {
+		escreva(“Erro! Operação inválida!”);
+		retorne;
+	}
+
+	// Atualiza o valor da coordenada central (P.S.: Não leva em conta o caso especial da coordenada central ser == 0)
+	malha[x, y] = novoValor;
+
+	alterarAdjacentes(malha, x, y, novoValor);
+}

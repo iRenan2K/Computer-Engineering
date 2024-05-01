@@ -1,0 +1,33 @@
+================================================================================================================================================================================
+Faça um pseudocódigo que leia o tempo em segundos e escreva a mesma quantidade de tempo em horas, minutos e segundos
+================================================================================================================================================================================
+
+inteiro: s0, h, min, seg;
+
+escreva("Digite o tempo em segundos: ");
+leia(s0);
+
+// Verifica e obriga que o tempo fornecido seja positivo
+enquanto (s0 <= 0) {
+        escreva("Entrada inválida! Por favor, digite um número positivo: ");
+        leia(s0);
+}
+
+// Cálculo das horas, minutos e segundos
+h = s0 / 3600;
+min = (s0 % 3600) / 60;
+seg = s0 % 60;
+
+// Ajusta os segundos e minutos caso os segundos sejam iguais ou maiores que 60
+enquanto (seg >= 60) {
+        seg -= 60;
+        min += 1;
+}
+
+// Ajusta os minutos e as horas caso os minutos sejam iguais ou maiores que 60
+enquanto (min >= 60) {
+        min -= 60;
+        h += 1;
+}        
+
+escreva(h, ":", min, ":", seg);

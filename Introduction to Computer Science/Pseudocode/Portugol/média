@@ -1,0 +1,30 @@
+====================================================================================================================================================================================
+Crie um algoritmo, em pseudocódigo, para calcular a média de um conjunto de valores inteiros e positivos fornecidos pelo usuário (Como flag, pode-se assumir o valor -1)
+====================================================================================================================================================================================
+
+inteiro: valor[], i = 0, somaValores = 0, média;
+
+// Registra os números no array valor[]
+enquanto (V) {
+	escreva("Digite um número natural (caso deseje encerrar a série de números, digite -1): ");
+	leia(valor[i]);
+
+	se (valor[i] == -1) {
+		se (i == 0) {
+			escreva("Erro: Não se pode encerrar a série de números na primeira iteração. Tente novamente!");
+			continue; // Pula para a próxima iteração, sem computar a entrada inválida
+		}
+		interrompa; // Sai imediatamente da estrutura de repetição
+	}
+	senão se (valor[i] < -1) {
+		escreva("Entrada inválida! Digite um número natural: ");
+		continue; // Pula para a próxima iteração, sem computar a entrada inválida
+	} 
+
+	// Adiciona o valor na soma total e incrementa "i" apenas se a entrada for válida
+	somaValores += valor[i];
+	i++;
+}
+
+média = somaValores / i;
+escreva("A média dos valores fornecidos é: ", média);

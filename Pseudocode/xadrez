@@ -1,0 +1,5 @@
+==================================================================================================================================================================================================================
+Dado um tabuleiro de xadrez, com a partida iniciada, indique a quantidade de peças de cada tipo. A saída deverá ser por exemplo: 3 peões brancos, 1 rei branco, 1 torre branca, 4 peões pretos, 1 rei preto...
+Para facilitar, considere cada peça como um número (1 - peões, 2 - cavalos, 3 - torres, 4 - bispos, 5 - reis, 6 - rainhas e 0 - ausência de peças)
+==================================================================================================================================================================================================================
+

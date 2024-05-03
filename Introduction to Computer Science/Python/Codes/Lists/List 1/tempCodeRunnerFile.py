@@ -1,1 +1,0 @@
-Enter the time, in seconds: "

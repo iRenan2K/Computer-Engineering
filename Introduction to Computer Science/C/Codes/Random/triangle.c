@@ -7,11 +7,11 @@ int main() {
     printf("\nHello! Welcome to the Right-Angled Triangle existence verifier program!\n\n");
 
     for (int i = 0; i < 3; i++) {
-        printf("Enter the \"%c\" side: ", letter[i]);
+        printf("Enter the \"%c\" side: ", letter[i]);   // Don't forget to add negative values verification
         scanf(" %d", &side[i]);
     }
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {           // Bubble sort
         for (int j = i + 1; j < 3; j++) {
             if (side[i] > side[j]) {
                 int temp = side[i];
@@ -30,29 +30,3 @@ int main() {
 
     return 0;
 }
-
-/*
-#include <stdio.h>
-
-int main() {
-    printf("\nHello! Welcome to the Right-Angled Triangle existence verifier program!\n\n");
-
-    printf("Enter cathetus \'a\': ");
-    scanf(" %d", &a);
-
-    printf("Enter cathetus \'b\': ");
-    scanf(" %d", &b);
-
-    printf("Enter cathetus \'c\': ");
-    scanf(" %d", &c);
-
-    return 0;
-}
-
-
-
-
-
-
-
-*/

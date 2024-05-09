@@ -17,8 +17,8 @@ int main() {
     int j = 2147483647;                 // 4 bytes (-2,147,483,648 to +2,147,483,647) %d
     unsigned int k = 4294967295;        // 4 bytes (0 to +4,294,967,295) %u
 
-    long long int l = 9223372036854775807;                  // 8 bytes (-9 quintillion to +9 quintillion) %lld
-    unsigned long long int m = 18446744073709551615U;       // 8 bytes (0 to +18 quintillion) %llu
+    long long l = 9223372036854775807;                  // 8 bytes (-9 quintillion to +9 quintillion) %lld
+    unsigned long long m = 18446744073709551615U;       // 8 bytes (0 to +18 quintillion) %llu
 
     printf("\n%c\n", a);  // char
     printf("%s\n", b);    // character array
@@ -31,8 +31,8 @@ int main() {
     printf("%d\n", i);    // unsigned short
     printf("%d\n", j);    // int
     printf("%u\n", k);    // unsigned int
-    printf("%lld\n", l);  // long long int
-    printf("%llu\n", m);  // unsigned long long int
+    printf("%lld\n", l);  // long long
+    printf("%llu\n", m);  // unsigned long long
 
     return 0;
 }

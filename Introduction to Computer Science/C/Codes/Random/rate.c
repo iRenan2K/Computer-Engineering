@@ -6,7 +6,7 @@ char rateType, rateTime;
 double rate1, rate2;
 
 int main () {
-    printf("\nHello! Welcome to the Interest Rate converter!\n\n");
+    printf("\nHello! Welcome to the Interest Rate converter!\n");
     
     while (1) {
         printf("\nEnter \"S\" for Simple or \"C\" for Compound interest rate: ");

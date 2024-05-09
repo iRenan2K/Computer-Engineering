@@ -7,11 +7,11 @@ int main() {
     printf("\nHow many terms of the Fibonacci sequence do you want to display? ");
 
     while (scanf(" %d", &terms) != 1 || terms < 2) {
-        printf("Error: Please enter a natural number of terms greater than or equals 2: ");
+        printf("ERROR: Please enter a natural number of terms greater than or equals 2: ");
         while (getchar() != '\n');
     }
 
-    printf("\nThe first %d terms of the Fibonacci sequence are:\n", terms);
+    printf("\nThe first %d terms of the Fibonacci sequence are:\n\n", terms);
     printf("%llu\n%llu\n", first, second);
     
     for (int i = 3; i <= terms; i++) {

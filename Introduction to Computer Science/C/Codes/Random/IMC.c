@@ -3,7 +3,7 @@
 int main() {
     float weight, height, IMC;
 
-    printf("\nHello! Welcome to the IMC/BMI calculator!\n");    // arrumar um jeito de lidar com , e .
+    printf("\nHello! Welcome to the IMC/BMI calculator!\n");    // Find a way to deal with , and .
 
     printf("\nHow much do you weigh, in kilograms? ");
     while (scanf(" %f", &weight) != 1 || weight <= 0) {
